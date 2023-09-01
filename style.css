@@ -1,14 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Modak&display=swap");
 * {
   box-sizing: border-box;
 }
 :root {
   --background-color: black;
   --text-color: hsl(0, 0%, 100%);
+  --gold: #ffb338;
+  --light-shadow: #77571d;
+  --dark-shadow: #3e2904;
 }
 body {
   margin: 0;
+  overflow-x: hidden;
 }
-.wrapper {
+
+/*Sliced text effect*/
+.wrapper-1 {
   display: grid;
   place-content: center;
   background-color: var(--background-color);
@@ -19,8 +26,7 @@ body {
   text-transform: uppercase;
   color: var(--text-color);
 }
-
-.wrapper > div {
+.wrapper-1 > div {
   grid-area: 1/1/-1/-1;
 }
 .top {
@@ -35,22 +41,321 @@ body {
   -webkit-background-clip: text;
   transform: translateX(-0.02em);
 }
-/* .glow,.glow-shadow {
-  position:absolute; 
-  inset:0;
-   display: grid;
-    place-content:center;
-  }
-    .glow{
 
-       --glow-color：#E42D2D; 
-       background:inherit; 
-       background-size: cover;
-       background-position:center; 
-       background-clip:text; 
-       -webkit-background-clip:text;
-        color:#E42D2D; 
-        mix-blend-mode:plus-lighter; 
-filter:drop-shadow(Opx Opx 5px var(--glow-color))
-drop-shadow(Opx Opx 10px var(--glow-color));   
-    } */
+/*Reflecting text effect*/
+.wrapper-2 {
+  background-image: url(https://images.unsplash.com/photo-1494783367193-149034c05e8f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=100);
+  background-color: rgba(0, 0, 0, 0.6);
+  background-blend-mode: color;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  aspect-ratio: 16/9;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  padding-block-end: 2rem;
+  padding-inline: 2rem;
+  overflow-x: clip;
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.5rem, 15vw, 15rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  perspective: 2.5em;
+}
+.glow,
+.glow-shadow {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+}
+.glow {
+  --glow-color: hsl(248, 16%, 39%);
+  background: inherit;
+  background-size: cover;
+  background-position: center;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: rgba(0, 0, 0, 0);
+  mix-blend-mode: plus-lighter;
+  -webkit-text-stroke: 0.012em rgba(241, 240, 255, 0.384);
+  filter: drop-shadow(0px 0px 5px var(--glow-color))
+    drop-shadow(0px 0px 10px var(--glow-color));
+}
+.glow-shadow {
+  color: hsl(20, 100%, 98%);
+  mix-blend-mode: soft-light;
+  filter: brightness(2);
+  transform: translateY(10%) rotateX(81deg) scaleY(-1) translateY(-15%)
+    scaleY(1.35);
+}
+
+/*CSS Mirror/ Reflection Text Effect*/
+.wrapper-2a {
+  font-family: "Impact", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.mirror-text {
+  position: relative;
+  font-size: 120px;
+  font-weight: 900;
+  font-family: arial;
+  color: #4895ef;
+}
+
+.mirror-text:before {
+  content: "MIRROR";
+  position: absolute;
+  top: 85px;
+  transform: rotate(180deg) scaleX(-1);
+  opacity: 0.5;
+}
+
+.mirror-text:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 850px;
+  height: 100px;
+  top: 105px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 24%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+@media only screen and (max-width: 600px) {
+  .mirror-text {
+    font-size: 80px;
+  }
+  .mirror-text:before {
+    top: 60px;
+  }
+  .mirror-text:after {
+    top: 55px;
+  }
+}
+
+/*Gold text border*/
+.wrapper-3 {
+  background: radial-gradient(#272727, #1b1b1b);
+  display: grid;
+  grid-template-areas: "overlap";
+  place-content: center;
+  text-transform: uppercase;
+  height: 100vh;
+}
+.wrapper-3 > div {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: #363833;
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-size: clamp(3em, 18vw, 15rem);
+  grid-area: overlap;
+  letter-spacing: 1px;
+  -webkit-text-stroke: 4px transparent;
+}
+div.bg {
+  background-image: repeating-linear-gradient(
+    105deg,
+    var(--gold) 0%,
+    var(--dark-shadow) 5%,
+    var(--gold) 12%
+  );
+  color: transparent;
+  filter: drop-shadow(5px 15px 15px black);
+  transform: scaleY(1.05);
+  transform-origin: top;
+}
+div.fg {
+  background-image: repeating-linear-gradient(
+    5deg,
+    var(--gold) 0%,
+    var(--light-shadow) 23%,
+    var(--gold) 31%
+  );
+  color: #1e2127;
+  transform: scale(1);
+}
+
+/*Text effect using Background clip and clip path*/
+.wrapper-4 {
+  background: #a0769e;
+  font-family: "Poppins", sans-serif;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  height: auto;
+  min-height: calc(100vh - 60px);
+  padding: 6rem;
+  background: #efdfed;
+  border: 4px dotted #a0769e;
+}
+.bg-img {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-area: 1/1/2/2;
+  background: url("https://1.bp.blogspot.com/-2s7vnf178qA/XZmCjBLjKSI/AAAAAAAAJR0/H08_quee-GYE5h5LWSSZubXMic8aSa4DgCLcBGAsYHQ/s2160/sakura-tree-mobile-wallpaper.jpg")
+    no-repeat center center;
+  background-size: cover;
+  -webkit-transform: rotate(-4deg);
+  -ms-transform: rotate(-4deg);
+  transform: rotate(-4deg);
+  border-radius: 15px;
+}
+h1 {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: 1/1/-1/-1;
+  text-align: center;
+  background: url("https://1.bp.blogspot.com/-2s7vnf178qA/XZmCjBLjKSI/AAAAAAAAJR0/H08_quee-GYE5h5LWSSZubXMic8aSa4DgCLcBGAsYHQ/s2160/sakura-tree-mobile-wallpaper.jpg");
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: cover;
+  background-position: 200% 59%;
+  color: transparent;
+  position: relative;
+  align-self: center;
+  margin: 0;
+  font-family: "Modak", cursive;
+  font-weight: 500;
+  line-height: 9rem;
+}
+h1::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  -webkit-clip-path: polygon(
+    48.25% -28px,
+    52.37% 120.47%,
+    3.05% 130.06%,
+    -13px -24.7%,
+    35.46% -30.24%
+  );
+  clip-path: polygon(
+    48.25% -28px,
+    52.37% 120.47%,
+    3.05% 130.06%,
+    -13px -24.7%,
+    35.46% -30.24%
+  );
+  color: white;
+  text-shadow: 0px 0px 12px #a53569;
+}
+@media screen and (min-width: 1000px) {
+  .wrapper-4 {
+    width: 900px;
+    margin: auto;
+  }
+  h1 {
+    font-size: 9rem;
+  }
+}
+
+@media screen and (max-width: 999px) and (min-width: 769px) {
+  h1 {
+    font-size: 8rem;
+    line-height: 6rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .wrapper-4 {
+    padding: 5rem 3rem;
+  }
+  h1 {
+    font-size: 6rem;
+    line-height: 4rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .wrapper-4 {
+    padding: 5rem 2rem;
+  }
+  h1 {
+    font-size: 5rem;
+  }
+}
+
+/*Rainbow spotlight text effect*/
+.wrapper-5 {
+  background: linear-gradient(
+    #f70000,
+    #f89200,
+    #f8f501,
+    #038f00,
+    #0168f8,
+    #a200f7
+  );
+}
+.wrapper-5 h1 {
+  font-family: "Impact", sans-serif;
+  text-transform: uppercase;
+  font-size: 10rem;
+  text-align: center;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin: 0;
+  min-height: calc(100vh - 16px);
+  background: white;
+  position: relative;
+  background: #171717;
+  color: #000;
+}
+
+.wrapper-5 h1:before {
+  content: attr(data-text);
+  position: absolute;
+  background: linear-gradient(
+    #f70000,
+    #f89200,
+    #f8f501,
+    #038f00,
+    #0168f8,
+    #a200f7
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 100% 90%;
+  line-height: 0.9;
+  clip-path: ellipse(120px 120px at -2.54% -9.25%);
+  animation: swing 5s infinite;
+  animation-direction: alternate;
+}
+
+@keyframes swing {
+  0% {
+    -webkit-clip-path: ellipse(120px 120px at -2.54% -9.25%);
+    clip-path: ellipse(120px 120px at -2.54% -9.25%);
+  }
+  50% {
+    -webkit-clip-path: ellipse(120px 120px at 49.66% 64.36%);
+    clip-path: ellipse(120px 120px at 49.66% 64.36%);
+  }
+  100% {
+    -webkit-clip-path: ellipse(120px 120px at 102.62% -1.61%);
+    clip-path: ellipse(120px 120px at 102.62% -1.61%);
+  }
+}
