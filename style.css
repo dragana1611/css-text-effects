@@ -15,6 +15,7 @@
 body {
   margin: 0;
   overflow-x: hidden;
+  background: var(--background-color);
 }
 
 /*Sliced text effect*/
@@ -49,12 +50,10 @@ body {
 /*Reflecting text effect*/
 .wrapper-2 {
   width: 100%;
-  height: 100%;
-  background-image: url(https://images.unsplash.com/photo-1494783367193-149034c05e8f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=100);
+  background: url(https://images.unsplash.com/photo-1494783367193-149034c05e8f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=100)
+    no-repeat center center;
   background-color: rgba(0, 0, 0, 0.6);
   background-blend-mode: color;
-  background-repeat: no-repeat;
-  background-position: center;
   background-size: 100%;
   aspect-ratio: 16/9;
   position: relative;
@@ -99,6 +98,7 @@ body {
 .wrapper-2a {
   width: 100%;
   height: 100%;
+  padding: 50px 0 100px;
   font-family: "Impact", sans-serif;
   background-color: var(--background-color);
   display: flex;
@@ -391,8 +391,6 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  text-shadow: 0 0 6px rgba(202, 228, 225, 0.92),
-    0 0 12px rgba(30, 132, 242, 0.52);
 }
 .wrapper-6 ul li:nth-child(1) {
   transform: translate(-50%, -50%) rotate(0deg) translateY(-260px)
@@ -495,8 +493,6 @@ body {
   perspective: 900px;
   list-style: none;
   text-align: center;
-  display: flex;
-  justify-content: center;
 }
 @keyframes width-sway {
   0%,
