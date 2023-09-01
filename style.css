@@ -367,3 +367,261 @@ body {
     clip-path: ellipse(120px 120px at 102.62% -1.61%);
   }
 }
+
+/*Spinning ring text effect*/
+.wrapper-6 {
+  width: 100%;
+  height: 100vh;
+  font-family: "Modak", cursive;
+  background-color: var(--background-color);
+  color: #c6e2ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.wrapper-6 ul {
+  margin: 0;
+  list-style: none;
+  font-size: 4rem;
+  transform-style: preserve-3d;
+  animation: three-dimensions-circle 30s linear infinite;
+}
+.wrapper-6 ul li {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-shadow: 0 0 6px rgba(202, 228, 225, 0.92),
+    0 0 12px rgba(30, 132, 242, 0.52);
+}
+.wrapper-6 ul li:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(0deg) translateY(-260px)
+    rotateX(90deg);
+}
+.wrapper-6 ul li:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(18.95deg) translateY(-260px)
+    rotateX(90deg);
+}
+.wrapper-6 ul li:nth-child(3) {
+  transform: translate(-50%, -50%) rotate(37.9deg) translateY(-260px)
+    rotateX(90deg);
+}
+.wrapper-6 ul li:nth-child(4) {
+  transform: translate(-50%, -50%) rotate(56.85deg) translateY(-260px)
+    rotateX(90deg);
+}
+.wrapper-6 ul li:nth-child(5) {
+  transform: translate(-50%, -50%) rotate(75.8deg) translateY(-260px)
+    rotateX(90deg);
+}
+.wrapper-6 ul li:nth-child(6) {
+  transform: translate(-50%, -50%) rotate(94.75deg) translateY(-260px)
+    rotateX(90deg);
+}
+.wrapper-6 ul li:nth-child(7) {
+  transform: translate(-50%, -50%) rotate(113.7deg) translateY(-260px)
+    rotateX(90deg);
+}
+.wrapper-6 ul li:nth-child(8) {
+  transform: translate(-50%, -50%) rotate(132.65deg) translateY(-260px)
+    rotateX(90deg);
+}
+.wrapper-6 ul li:nth-child(9) {
+  transform: translate(-50%, -50%) rotate(151.6deg) translateY(-260px)
+    rotateX(90deg);
+}
+.wrapper-6 ul li:nth-child(10) {
+  transform: translate(-50%, -50%) rotate(170.55deg) translateY(-260px)
+    rotateX(90deg);
+}
+.wrapper-6 ul li:nth-child(11) {
+  transform: translate(-50%, -50%) rotate(189.5deg) translateY(-260px)
+    rotateX(90deg);
+}
+.wrapper-6 ul li:nth-child(12) {
+  transform: translate(-50%, -50%) rotate(208.45deg) translateY(-260px)
+    rotateX(90deg);
+}
+.wrapper-6 ul li:nth-child(13) {
+  transform: translate(-50%, -50%) rotate(227.4deg) translateY(-260px)
+    rotateX(90deg);
+}
+.wrapper-6 ul li:nth-child(14) {
+  transform: translate(-50%, -50%) rotate(246.35deg) translateY(-260px)
+    rotateX(90deg);
+}
+.wrapper-6 ul li:nth-child(15) {
+  transform: translate(-50%, -50%) rotate(265.3deg) translateY(-260px)
+    rotateX(90deg);
+}
+.wrapper-6 ul li:nth-child(16) {
+  transform: translate(-50%, -50%) rotate(284.25deg) translateY(-260px)
+    rotateX(90deg);
+}
+.wrapper-6 ul li:nth-child(17) {
+  transform: translate(-50%, -50%) rotate(303.2deg) translateY(-260px)
+    rotateX(90deg);
+}
+.wrapper-6 ul li:nth-child(18) {
+  transform: translate(-50%, -50%) rotate(322.15deg) translateY(-260px)
+    rotateX(90deg);
+}
+.wrapper-6 ul li:nth-child(19) {
+  transform: translate(-50%, -50%) rotate(341.1deg) translateY(-260px)
+    rotateX(90deg);
+}
+@keyframes three-dimensions-circle {
+  0% {
+    transform: rotateX(-100deg) rotate(0);
+  }
+  100% {
+    transform: rotateX(-100deg) rotate(-360deg);
+  }
+}
+
+/*Spiral Text Effect*/
+.wrapper-7 {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--background-color);
+  color: #f70776;
+}
+.wrapper-7 ul {
+  width: 100%;
+  height: 100vh;
+  max-height: 800px;
+  min-height: 400px;
+  overflow: hidden;
+  perspective: 900px;
+  list-style: none;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+@keyframes width-sway {
+  0%,
+  100% {
+    width: 500px;
+  }
+  50% {
+    width: 100%;
+  }
+}
+.wrapper-7 ul li {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  transform: translateY(100vh);
+  font-size: 1.5rem;
+  font-family: sans-serif;
+  font-weight: bold;
+  line-height: 3rem;
+  animation: 5.3333333333s spiral-staircase linear infinite;
+}
+.wrapper-7 ul li:nth-child(1) {
+  animation-delay: 0.3333333333s;
+}
+.wrapper-7 ul li:nth-child(2) {
+  animation-delay: 0.6666666667s;
+}
+.wrapper-7 ul li:nth-child(3) {
+  animation-delay: 1s;
+}
+.wrapper-7 ul li:nth-child(4) {
+  animation-delay: 1.3333333333s;
+}
+.wrapper-7 ul li:nth-child(5) {
+  animation-delay: 1.6666666667s;
+}
+.wrapper-7 ul li:nth-child(6) {
+  animation-delay: 2s;
+}
+.wrapper-7 ul li:nth-child(7) {
+  animation-delay: 2.3333333333s;
+}
+.wrapper-7 ul li:nth-child(8) {
+  animation-delay: 2.6666666667s;
+}
+.wrapper-7 ul li:nth-child(9) {
+  animation-delay: 3s;
+}
+.wrapper-7 ul li:nth-child(10) {
+  animation-delay: 3.3333333333s;
+}
+.wrapper-7 ul li:nth-child(11) {
+  animation-delay: 3.6666666667s;
+}
+.wrapper-7 ul li:nth-child(12) {
+  animation-delay: 4s;
+}
+.wrapper-7 ul li:nth-child(13) {
+  animation-delay: 4.3333333333s;
+}
+.wrapper-7 ul li:nth-child(14) {
+  animation-delay: 4.6666666667s;
+}
+.wrapper-7 ul li:nth-child(15) {
+  animation-delay: 5s;
+}
+.wrapper-7 ul li:nth-child(16) {
+  animation-delay: 5.3333333333s;
+}
+.wrapper-7 ul li:nth-child(1) {
+  right: 1rem;
+}
+.wrapper-7 ul li:nth-last-child(1) {
+  right: 1rem;
+}
+.wrapper-7 ul li:nth-child(2) {
+  right: 2rem;
+}
+.wrapper-7 ul li:nth-last-child(2) {
+  right: 2rem;
+}
+.wrapper-7 ul li:nth-child(3) {
+  right: 3rem;
+}
+.wrapper-7 ul li:nth-last-child(3) {
+  right: 3rem;
+}
+.wrapper-7 ul li:nth-child(4) {
+  right: 4rem;
+}
+.wrapper-7 ul li:nth-last-child(4) {
+  right: 4rem;
+}
+.wrapper-7 ul li:nth-child(5) {
+  right: 5rem;
+}
+.wrapper-7 ul li:nth-last-child(5) {
+  right: 5rem;
+}
+.wrapper-7 ul li:nth-child(6) {
+  right: 6rem;
+}
+.wrapper-7 ul li:nth-last-child(6) {
+  right: 6rem;
+}
+.wrapper-7 ul li:nth-child(7) {
+  right: 7rem;
+}
+.wrapper-7 ul li:nth-last-child(7) {
+  right: 7rem;
+}
+.wrapper-7 ul li:nth-child(8) {
+  right: 8rem;
+}
+.wrapper-7 ul li:nth-last-child(8) {
+  right: 8rem;
+}
+@keyframes spiral-staircase {
+  0% {
+    transform: rotateY(90deg) translateY(105vh) rotate(0deg);
+  }
+  50% {
+    transform: rotateY(0deg) translateY(50vh) rotate(0deg);
+  }
+  100% {
+    transform: rotateY(-90deg) translateY(-5vh) rotate(0deg);
+  }
+}
