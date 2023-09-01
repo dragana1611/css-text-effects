@@ -4,6 +4,9 @@
 }
 :root {
   --background-color: black;
+  --color-black: #000;
+  --color-white: #fff;
+  --glow-color: hsl(248, 16%, 39%);
   --text-color: hsl(0, 0%, 100%);
   --gold: #ffb338;
   --light-shadow: #77571d;
@@ -16,6 +19,7 @@ body {
 
 /*Sliced text effect*/
 .wrapper-1 {
+  width: 100%;
   display: grid;
   place-content: center;
   background-color: var(--background-color);
@@ -44,6 +48,8 @@ body {
 
 /*Reflecting text effect*/
 .wrapper-2 {
+  width: 100%;
+  height: 100%;
   background-image: url(https://images.unsplash.com/photo-1494783367193-149034c05e8f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=100);
   background-color: rgba(0, 0, 0, 0.6);
   background-blend-mode: color;
@@ -52,9 +58,6 @@ body {
   background-size: 100%;
   aspect-ratio: 16/9;
   position: relative;
-  width: 100%;
-  height: 100%;
-  border-radius: 15px;
   padding-block-end: 2rem;
   padding-inline: 2rem;
   overflow-x: clip;
@@ -73,7 +76,6 @@ body {
   place-content: center;
 }
 .glow {
-  --glow-color: hsl(248, 16%, 39%);
   background: inherit;
   background-size: cover;
   background-position: center;
@@ -93,60 +95,65 @@ body {
     scaleY(1.35);
 }
 
-/*CSS Mirror/ Reflection Text Effect*/
+/*CSS Mirror Text Effect*/
 .wrapper-2a {
+  width: 100%;
+  height: 100%;
   font-family: "Impact", sans-serif;
+  background-color: var(--background-color);
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.6);
 }
-.mirror-text {
-  position: relative;
-  font-size: 120px;
-  font-weight: 900;
-  font-family: arial;
-  color: #4895ef;
+.main {
+  display: inline-flex;
 }
-
-.mirror-text:before {
-  content: "MIRROR";
-  position: absolute;
-  top: 85px;
-  transform: rotate(180deg) scaleX(-1);
-  opacity: 0.5;
+.box {
+  margin-top: 50px;
+  font-size: 5em;
+  padding: 20px;
+  color: var(--color-white);
+  font-weight: 800;
+  animation: aniload 3s;
 }
-
-.mirror-text:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 850px;
-  height: 100px;
-  top: 105px;
-  background: linear-gradient(
+#box1::after {
+  content: "Tech";
+  display: flex;
+  transform: rotateX(180deg);
+  background-image: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0) 24%,
-    rgba(255, 255, 255, 0.2) 50%,
-    rgba(255, 255, 255, 1) 100%
+    rgba(255, 255, 255, 0) 10%,
+    rgba(255, 255, 255, 0.5)
   );
+  -webkit-background-clip: text;
+  color: transparent;
 }
-
-@media only screen and (max-width: 600px) {
-  .mirror-text {
-    font-size: 80px;
+#box2 {
+  color: rgb(37, 116, 236);
+}
+#box2::after {
+  content: "Anarchy";
+  display: flex;
+  transform: rotateX(180deg);
+  background-image: linear-gradient(
+    180deg,
+    rgba(37, 116, 236, 0) 10%,
+    rgba(37, 116, 236, 0.5)
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+}
+@keyframes aniload {
+  from {
+    transform: translate(-1000px, 0px);
   }
-  .mirror-text:before {
-    top: 60px;
-  }
-  .mirror-text:after {
-    top: 55px;
+  to {
+    transform: translate(0px, 0px);
   }
 }
 
 /*Gold text border*/
 .wrapper-3 {
+  width: 100%;
   background: radial-gradient(#272727, #1b1b1b);
   display: grid;
   grid-template-areas: "overlap";
@@ -165,7 +172,7 @@ body {
   letter-spacing: 1px;
   -webkit-text-stroke: 4px transparent;
 }
-div.bg {
+.wrapper-3 > div.bg {
   background-image: repeating-linear-gradient(
     105deg,
     var(--gold) 0%,
@@ -177,7 +184,7 @@ div.bg {
   transform: scaleY(1.05);
   transform-origin: top;
 }
-div.fg {
+.wrapper-3 > div.fg {
   background-image: repeating-linear-gradient(
     5deg,
     var(--gold) 0%,
@@ -190,6 +197,7 @@ div.fg {
 
 /*Text effect using Background clip and clip path*/
 .wrapper-4 {
+  width: 100%;
   background: #a0769e;
   font-family: "Poppins", sans-serif;
   display: -ms-grid;
@@ -202,7 +210,7 @@ div.fg {
   background: #efdfed;
   border: 4px dotted #a0769e;
 }
-.bg-img {
+.wrapper-4 > .bg-img {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   -ms-grid-column: 1;
@@ -216,7 +224,7 @@ div.fg {
   transform: rotate(-4deg);
   border-radius: 15px;
 }
-h1 {
+.wrapper-4 > h1 {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   -ms-grid-column: 1;
@@ -236,7 +244,7 @@ h1 {
   font-weight: 500;
   line-height: 9rem;
 }
-h1::before {
+.wrapper-4 > h1::before {
   content: attr(data-text);
   position: absolute;
   left: 0;
@@ -266,13 +274,13 @@ h1::before {
     width: 900px;
     margin: auto;
   }
-  h1 {
+  .wrapper-4 > h1 {
     font-size: 9rem;
   }
 }
 
 @media screen and (max-width: 999px) and (min-width: 769px) {
-  h1 {
+  .wrapper-4 > h1 {
     font-size: 8rem;
     line-height: 6rem;
   }
@@ -281,7 +289,7 @@ h1::before {
   .wrapper-4 {
     padding: 5rem 3rem;
   }
-  h1 {
+  .wrapper-4 > h1 {
     font-size: 6rem;
     line-height: 4rem;
   }
@@ -290,13 +298,14 @@ h1::before {
   .wrapper-4 {
     padding: 5rem 2rem;
   }
-  h1 {
+  .wrapper-4 > h1 {
     font-size: 5rem;
   }
 }
 
 /*Rainbow spotlight text effect*/
 .wrapper-5 {
+  width: 100%;
   background: linear-gradient(
     #f70000,
     #f89200,
@@ -306,7 +315,7 @@ h1::before {
     #a200f7
   );
 }
-.wrapper-5 h1 {
+.wrapper-5 > h1 {
   font-family: "Impact", sans-serif;
   text-transform: uppercase;
   font-size: 10rem;
@@ -325,7 +334,7 @@ h1::before {
   color: #000;
 }
 
-.wrapper-5 h1:before {
+.wrapper-5 > h1::before {
   content: attr(data-text);
   position: absolute;
   background: linear-gradient(
@@ -344,7 +353,6 @@ h1::before {
   animation: swing 5s infinite;
   animation-direction: alternate;
 }
-
 @keyframes swing {
   0% {
     -webkit-clip-path: ellipse(120px 120px at -2.54% -9.25%);
